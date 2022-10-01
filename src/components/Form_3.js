@@ -82,18 +82,18 @@ const Form_3 = ({
         />
         <br />
         {imgUrl2 ? (
-          <button onClick={upload_img} className="bg-green-500 px-4 py-2">
-            upload image
+          <button onClick={upload_img} className="bg-green-500 px-4 py-2 my-4 w-96 text-white font-medium">
+            Submit
           </button>
         ) : null}
         <br />
 
-        <input
+        {/* <input
           disabled={formData3.length > 1 ? true : false}
-          className="w-96 py-2 bg-green-600 cursor-pointer font-medium text-white my-3"
+          className="w-96 py-2 bg-green-600 cursor-pointer font-medium text-white my-6"
           type="submit"
           value="Next"
-        />
+        /> */}
       </form>
     </div>
   );

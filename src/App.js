@@ -37,6 +37,7 @@ function App() {
     axios.post("http://localhost:5000/saveUsers", formData).then((res) => {
       if (res.data.acknowledged) {
         setCurrentState(currentState + 1);
+        alert("Signup successful!")
       }
     });
   };
@@ -48,7 +49,7 @@ function App() {
   return (
     <div className="container mx-auto px-8 md:px-0 flex justify-center">
       <div className="w-5/6">
-        <Progress_sec />
+        <Progress_sec currentState={currentState} />
         {currentState === 0 ? (
           <Form_1
             submitData={submitData}
