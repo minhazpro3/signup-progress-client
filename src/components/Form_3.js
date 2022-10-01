@@ -35,7 +35,6 @@ const Form_3 = ({
       .post("https://api.imgbb.com/1/upload", formData)
       .then((res) => {
         setImgUrl(res.data.data.url);
-        console.log(res.data.data.url);
       })
       .catch((error) => {});
   };
@@ -82,7 +81,10 @@ const Form_3 = ({
         />
         <br />
         {imgUrl2 ? (
-          <button onClick={upload_img} className="bg-green-500 px-4 py-2 my-4 w-96 text-white font-medium">
+          <button
+            onClick={upload_img}
+            className="bg-green-500 px-4 py-2 my-4 w-96 text-white font-medium"
+          >
             Submit
           </button>
         ) : null}

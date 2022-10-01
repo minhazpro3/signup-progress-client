@@ -11,14 +11,11 @@ import Success from "./components/Success";
 
 function App() {
   const [currentState, setCurrentState] = useState(0);
-  console.log(currentState);
   const [formData1, setFormData1] = useState({});
   const [formData2, setFormData2] = useState({});
   const [formData3, setFormData3] = useState([]);
 
-  console.log(formData1, "form 1");
-  console.log(formData2, "form 2");
-  console.log(formData3, "form 3");
+ 
 
   const submitData = () => {
     const formData = {
@@ -33,7 +30,7 @@ function App() {
       signature: formData3.url2,
     };
 
-    console.log(formData);
+
 
     axios.post("https://radiant-brook-39681.herokuapp.com/saveUsers", formData).then((res) => {
       if (res.data.acknowledged) {

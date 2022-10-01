@@ -10,7 +10,6 @@ const Form_2 = ({
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     if (data) {
-      console.log(data);
       setCurrentState(currentState + 1);
       setFormData2(data);
     }
