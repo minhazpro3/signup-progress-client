@@ -1,20 +1,28 @@
+/* eslint-disable no-mixed-operators */
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const Form_3 = ({ buttonAvailable, setCurrentState, currentState }) => {
-    const [imgUrl, setImgUrl]=useState("")
+const Form_3 = ({
+  submitData,
+  setCurrentState,
+  currentState,
+  setFormData3,
+  formData3,
+}) => {
+  const [imgUrl, setImgUrl] = useState("");
+  const [imgUrl2, setImgUrl2] = useState("");
+
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     if (data) {
-        console.log(data);
-        setCurrentState(currentState+1)
+      submitData();
     }
-    };
-    
-    
+  };
 
-
+  const upload_img = () => {
+    setFormData3({ url1: imgUrl, url2: imgUrl2 });
+  };
 
   const setImage = (e) => {
     e.preventDefault();
@@ -27,8 +35,26 @@ const Form_3 = ({ buttonAvailable, setCurrentState, currentState }) => {
       .post("https://api.imgbb.com/1/upload", formData)
       .then((res) => {
         setImgUrl(res.data.data.url);
+        console.log(res.data.data.url);
       })
       .catch((error) => {});
+  };
+  // image setUrl 2
+  const setImage2 = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.set("key", "a8859d2230e61a23e842e4132855a72d");
+    formData.append("image", e.target.files[0]);
+
+    if (imgUrl) {
+      axios
+        .post("https://api.imgbb.com/1/upload", formData)
+        .then((res) => {
+          setImgUrl2(res.data.data.url);
+        })
+        .catch((error) => {});
+    }
   };
   return (
     <div className="flex justify-center">
@@ -39,6 +65,8 @@ const Form_3 = ({ buttonAvailable, setCurrentState, currentState }) => {
           className="w-96 my-4 px-2 outline-none py-2 border-2 border-gray-200 rounded-lg"
           {...register("photo")}
           type="file"
+          accept="image"
+          onChange={setImage}
           required
         />
         <br />
@@ -47,18 +75,24 @@ const Form_3 = ({ buttonAvailable, setCurrentState, currentState }) => {
         <input
           className="w-96 my-4 px-2 outline-none py-2 border-2 border-gray-200 rounded-lg "
           {...register("signature")}
-                  type="file"
-                  accept="image"
-                  onChange={setImage}
+          type="file"
+          accept="image"
+          onChange={setImage2}
           required
         />
         <br />
+        {imgUrl2 ? (
+          <button onClick={upload_img} className="bg-green-500 px-4 py-2">
+            upload image
+          </button>
+        ) : null}
+        <br />
 
-              <input
-                 
+        <input
+          disabled={formData3.length > 1 ? true : false}
           className="w-96 py-2 bg-green-600 cursor-pointer font-medium text-white my-3"
-                  type="submit"
-                  value="Next"
+          type="submit"
+          value="Next"
         />
       </form>
     </div>

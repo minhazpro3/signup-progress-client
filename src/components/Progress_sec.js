@@ -11,6 +11,14 @@ const Progress_sec = () => {
           Fill all form field to go to next step
         </h2>
       </div>
+      {/* progress  */}
+      <div>
+        <div>
+          <div >
+            
+</div>
+        </div>
+      </div>
     </div>
   );
 };

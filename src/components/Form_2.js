@@ -1,12 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const Form_2 = ({ buttonAvailable, setCurrentState, currentState }) => {
+const Form_2 = ({
+  submitData,
+  setCurrentState,
+  currentState,
+  setFormData2,
+}) => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     if (data) {
-        console.log(data);
-        setCurrentState(currentState+1)
+      console.log(data);
+      setCurrentState(currentState + 1);
+      setFormData2(data);
     }
   };
   return (
@@ -54,10 +60,9 @@ const Form_2 = ({ buttonAvailable, setCurrentState, currentState }) => {
         <br />
 
         <input
-           
           className="w-96 py-2 bg-green-600 cursor-pointer font-medium text-white my-3"
-                  type="submit"
-                  value="Next"
+          type="submit"
+          value="Next"
         />
       </form>
     </div>
