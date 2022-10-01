@@ -35,7 +35,7 @@ function App() {
 
     console.log(formData);
 
-    axios.post("http://localhost:5000/saveUsers", formData).then((res) => {
+    axios.post("https://radiant-brook-39681.herokuapp.com/saveUsers", formData).then((res) => {
       if (res.data.acknowledged) {
         setCurrentState(currentState + 1);
         alert("Signup successful!")
