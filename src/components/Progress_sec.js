@@ -26,7 +26,15 @@ const Progress_sec = ({ currentState }) => {
                 >
                   🔒
                 </div>
-                <h4>Account</h4>
+                <h4
+                  className={
+                    currentState === 0 || 1 || 2 || 3
+                      ? "text-green-600 font-semibold"
+                      : ""
+                  }
+                >
+                  Account
+                </h4>
               </div>
               <div className="relative z-20">
                 <div
@@ -38,7 +46,13 @@ const Progress_sec = ({ currentState }) => {
                 >
                   👤
                 </div>
-                <h4>Personal</h4>
+                <h4
+                  className={
+                    currentState >= 1 ? "text-green-600 font-semibold" : ""
+                  }
+                >
+                  Personal
+                </h4>
               </div>
               <div className="relative z-20">
                 <div
@@ -50,7 +64,13 @@ const Progress_sec = ({ currentState }) => {
                 >
                   📷
                 </div>
-                <h4>Image</h4>
+                <h4
+                  className={
+                    currentState >= 2 ? "text-green-600 font-semibold" : ""
+                  }
+                >
+                  Image
+                </h4>
               </div>
               <div className="relative z-20">
                 <div
@@ -62,7 +82,13 @@ const Progress_sec = ({ currentState }) => {
                 >
                   ✔️
                 </div>
-                <h4>Finish</h4>
+                <h4
+                  className={
+                    currentState >= 3 ? "text-green-600 font-semibold" : ""
+                  }
+                >
+                  Finish
+                </h4>
               </div>
             </div>
           </div>

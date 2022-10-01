@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./App.css";
+import Direction from "./components/Direction";
 import Form_1 from "./components/Form_1";
 import Form_2 from "./components/Form_2";
 import Form_3 from "./components/Form_3";
@@ -47,9 +48,10 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto px-8 md:px-0 flex justify-center">
+    <div className="container mx-auto px-8 md:px-0 flex justify-center my-16">
       <div className="w-5/6">
         <Progress_sec currentState={currentState} />
+        <Direction currentState={currentState} />
         {currentState === 0 ? (
           <Form_1
             submitData={submitData}
