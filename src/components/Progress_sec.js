@@ -92,21 +92,23 @@ const Progress_sec = ({ currentState }) => {
               </div>
             </div>
           </div>
-          <div className="  flex justify-between ">
+          <div className="flex justify-center">
+          <div className="  flex justify-start w-[36rem] ">
             <div
               className={
                 currentState === 0
-                  ? `border-green-600 absolute ml-[246px] -mt-12 border-t-4 w-[9rem]  z-10 h-2`
+                  ? `border-green-600 absolute -mt-12 border-t-4 w-[9rem]   z-10 h-2`
                   : currentState === 1
-                  ? `border-green-600 absolute ml-[246px] -mt-12 border-t-4 w-[18rem]  z-10 h-2`
+                  ? `border-green-600 absolute -mt-12 border-t-4 w-[18rem]  z-10 h-2`
                   : currentState === 2
-                  ? `border-green-600 absolute ml-[246px] -mt-12 border-t-4 w-[27rem]  z-10 h-2`
+                  ? `border-green-600 absolute -mt-12 border-t-4 w-[27rem]  z-10 h-2`
                   : currentState === 3
-                  ? `border-green-600 absolute ml-[246px] -mt-12 border-t-4 w-[36rem]  z-10 h-2`
+                  ? `border-green-600 absolute -mt-12 border-t-4 w-[36rem]  z-10 h-2`
                   : ` `
               }
             ></div>
           </div>
+         </div>
           <div className="  flex justify-center    ">
             <div className="absolute -mt-12 border-t-4 border-gray-300 w-[36rem] h-2"></div>
           </div>
