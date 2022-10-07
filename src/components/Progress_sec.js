@@ -92,25 +92,42 @@ const Progress_sec = ({ currentState }) => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
-          <div className="  flex justify-start w-[36rem] ">
+          <div className=" absolute -mt-12 left-2/4 transform -translate-x-2/4 w-[36rem]  rounded-full dark:bg-gray-700 mx-auto">
             <div
-              className={
+              className="  text-xs font-medium   text-blue-100 text-center py-[2px] leading-none rounded-full"
+              style={
                 currentState === 0
-                  ? `border-green-600 absolute -mt-12 border-t-4 w-[9rem]   z-10 h-2`
+                  ? { width: "25%" }
                   : currentState === 1
-                  ? `border-green-600 absolute -mt-12 border-t-4 w-[18rem]  z-10 h-2`
+                  ? { width: "50%" }
                   : currentState === 2
-                  ? `border-green-600 absolute -mt-12 border-t-4 w-[27rem]  z-10 h-2`
+                  ? { width: "75%" }
                   : currentState === 3
-                  ? `border-green-600 absolute -mt-12 border-t-4 w-[36rem]  z-10 h-2`
-                  : ` `
+                  ? { width: "100%" }
+                  : ""
               }
-            ></div>
+            >
+              {" "}
+            </div>
           </div>
-         </div>
-          <div className="  flex justify-center    ">
-            <div className="absolute -mt-12 border-t-4 border-gray-300 w-[36rem] h-2"></div>
+          
+          <div className=" absolute -mt-12 left-2/4 transform -translate-x-2/4 w-[36rem] bg-gray-200 rounded-full dark:bg-gray-700 mx-auto">
+            <div
+              className="bg-[#16A34A] text-xs font-medium  text-blue-100 text-center py-[2px] leading-none rounded-full"
+              style={
+                currentState === 0
+                  ? { width: "25%" }
+                  : currentState === 1
+                  ? { width: "50%" }
+                  : currentState === 2
+                  ? { width: "75%" }
+                  : currentState === 3
+                  ? { width: "100%" }
+                  : ""
+              }
+            >
+              {" "}
+            </div>
           </div>
         </div>
         <div className="container flex justify-center  my-6">
